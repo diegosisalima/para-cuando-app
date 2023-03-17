@@ -15,7 +15,27 @@
   .app-title-1 {
     @apply font-black text-5xl leading-[56px] font-Roboto;
   }
-
+  .app-subtitle-1 {
+    @apply font-medium text-base leading-[19px] font-Roboto;
+  }
+  .app-title-2 {
+    @apply font-medium text-2xl leading-7 font-Roboto;
+  }
+  .app-subtitle-2 {
+    @apply font-normal text-base leading-[19px] font-Roboto;
+  }
+  .app-title-3 {
+    @apply font-semibold text-xl leading-[23px] font-Roboto;
+  }
+  .app-texto-1 {
+    @apply font-normal text-[15px] leading-[18px] font-Roboto;
+  }
+  .app-texto-2 {
+    @apply font-medium text-sm leading-4 font-Roboto;
+  }
+  .drop-shadow {
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+  }
   .app-banner {
     @apply w-screen m-auto relative left-[calc(-50vw_+_50%)];
   }
