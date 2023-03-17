@@ -24,14 +24,47 @@ const Home: NextPageWithLayout = () => {
             placeholder="¿Qué quieres ver en tu ciudad?"
           />
           <div className="flex items-center justify-center gap-2">
+            <Link href={'/login'}>
+              <button>Login</button>
+            </Link>
+            <Link href={'/signin'}>
+              <button>Signin</button>
+            </Link>
+            <Link href={'/signup'}>
+              <button>Signup</button>
+            </Link>
+            <Link href={'/password-recovery'}>
+              <button>Password-recovery</button>
+            </Link>
+            <Link href={'/'}>
+              <button>Home</button>
+            </Link>
+            <Link href={'/search'}>
+              <button>búsquedas</button>
+            </Link>
+            <Link href={'/profile'}>
+              <button>perfil</button>
+            </Link>
+            <Link href={'/profile-settings'}>
+              <button>perfil configuración</button>
+            </Link>
+            <Link href={'/publication'}>
+              <button>crear publicación</button>
+            </Link>
+            <Link href={'/publication-galery'}>
+              <button>crear publicación-galeria</button>
+            </Link>
             <Link href={'/category/marcas-y-tiendas'}>
               <button>Marcas y tiendas</button>
             </Link>
-            <Link href={'/category/marcas-y-tiendas'}>
+            <Link href={'/category/artistas-y-conciertos'}>
               <button>Artistas y conciertos</button>
             </Link>
-            <Link href={'/category/marcas-y-tiendas'}>
+            <Link href={'/category/torneos'}>
               <button>Torneos</button>
+            </Link>
+            <Link href={'/:id/detail'}>
+              <button>detalle</button>
             </Link>
           </div>
         </div>
