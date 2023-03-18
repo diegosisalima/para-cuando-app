@@ -38,3 +38,5 @@ export const IconLogo: FC<IIconLogo> = ({ ...svgProps }) => {
     </svg>
   );
 };
+
+export default IconLogo;
