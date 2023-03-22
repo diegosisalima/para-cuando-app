@@ -1,8 +1,7 @@
-import Link from 'next/link';
 import Logo from '../components/assets/logo/Logo';
+import Input from '../components/input/Input';
 import { Layout } from '../components/layout/Layout';
 import { useCategories } from '../lib/services/categories.services';
-
 import { NextPageWithLayout } from './page';
 
 const Home: NextPageWithLayout = () => {
@@ -13,12 +12,26 @@ const Home: NextPageWithLayout = () => {
   return (
     <div>
       {/* HERO SECTION */}
-      <div className='min-h-[488px] flex justify-center items-center flex-col bg-[url("/hero-banner.png")] bg-cover bg-center app-banner -mt-4 gap-5'>
+      <div className='min-h-[488px] flex justify-center items-center flex-col bg-[url("/hero-banner.png")] bg-cover bg-center app-banner -mt-4 gap-8'>
         <div>
           <Logo />
         </div>
         <div className="flex flex-col gap-4">
-          <input
+          <div className="w-[372px] relative sm:w-[465px]">
+            <Input />
+          </div>
+          <section className="flex justify-between sm:justify-center sm:gap-3">
+            <p className="bg-[#FFFFFF] text-app-grayDark text-sm rounded-3xl px-3 py-2">
+              Marcas y tiendas
+            </p>
+            <p className="bg-[#FFFFFF] text-app-grayDark text-sm rounded-3xl px-3 py-2">
+              Artistas y conciertos
+            </p>
+            <p className="bg-[#FFFFFF] text-app-grayDark  text-sm rounded-3xl px-3 py-2">
+              Torneos
+            </p>
+          </section>
+          {/* <input
             className="px-6 py-4 rounded-3xl w-full sm:w-[465px]"
             type="text"
             placeholder="¿Qué quieres ver en tu ciudad?"
@@ -66,7 +79,7 @@ const Home: NextPageWithLayout = () => {
             <Link href={'/:id/detail'}>
               <button>detalle</button>
             </Link>
-          </div>
+          </div> */}
         </div>
       </div>
       {/* CONTENIDO */}
