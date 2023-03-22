@@ -1,6 +1,8 @@
 import Logo from '../components/assets/logo/Logo';
+import EventCard from '../components/card/card';
 import Input from '../components/input/Input';
 import { Layout } from '../components/layout/Layout';
+import { eventsMock } from '../lib/data/events.mock';
 import { useCategories } from '../lib/services/categories.services';
 import { NextPageWithLayout } from './page';
 
@@ -83,7 +85,15 @@ const Home: NextPageWithLayout = () => {
         </div>
       </div>
       {/* CONTENIDO */}
-      <div className="bg-red-300 h-[70vh]">CONTENIDO</div>
+      <div className="bg-red-300 h-[70vh]">
+        <EventCard
+          title={eventsMock[0].title}
+          short_description={eventsMock[0].short_description}
+          votes={eventsMock[0].votes}
+          url={eventsMock[0].url}
+          image={eventsMock[0].image}
+        />
+      </div>
     </div>
   );
 };
