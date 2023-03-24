@@ -1,10 +1,13 @@
-import Logo from '../components/assets/logo/Logo';
-import EventCard from '../components/card/card';
-import Input from '../components/input/Input';
-import { Layout } from '../components/layout/Layout';
 import { eventsMock } from '../lib/data/events.mock';
 import { useCategories } from '../lib/services/categories.services';
 import { NextPageWithLayout } from './page';
+/*components */
+import Logo from '../components/assets/logo/Logo';
+import Input from '../components/input/Input';
+import Interest from '../components/interest/Interest';
+import { Layout } from '../components/layout/Layout';
+import { EventSlider } from '../components/sliders/EventSlider/EventSlider';
+import Tag from '../components/tag/Tag';
 
 const Home: NextPageWithLayout = () => {
   const { data, error, isLoading } = useCategories();
@@ -23,75 +26,31 @@ const Home: NextPageWithLayout = () => {
             <Input />
           </div>
           <section className="flex justify-between sm:justify-center sm:gap-3">
-            <p className="bg-[#FFFFFF] text-app-grayDark text-sm rounded-3xl px-3 py-2">
-              Marcas y tiendas
-            </p>
-            <p className="bg-[#FFFFFF] text-app-grayDark text-sm rounded-3xl px-3 py-2">
-              Artistas y conciertos
-            </p>
-            <p className="bg-[#FFFFFF] text-app-grayDark  text-sm rounded-3xl px-3 py-2">
-              Torneos
-            </p>
+            <Tag text="Marcas y tiendas" />
+            <Tag text="Artistas y conciertos" />
+            <Tag text="Torneos" />
           </section>
-          {/* <input
-            className="px-6 py-4 rounded-3xl w-full sm:w-[465px]"
-            type="text"
-            placeholder="¿Qué quieres ver en tu ciudad?"
-          />
-          <div className="flex items-center justify-center gap-2">
-            <Link href={'/login'}>
-              <button>Login</button>
-            </Link>
-            <Link href={'/signin'}>
-              <button>Signin</button>
-            </Link>
-            <Link href={'/signup'}>
-              <button>Signup</button>
-            </Link>
-            <Link href={'/password-recovery'}>
-              <button>Password-recovery</button>
-            </Link>
-            <Link href={'/'}>
-              <button>Home</button>
-            </Link>
-            <Link href={'/search'}>
-              <button>búsquedas</button>
-            </Link>
-            <Link href={'/profile'}>
-              <button>perfil</button>
-            </Link>
-            <Link href={'/profile-settings'}>
-              <button>perfil configuración</button>
-            </Link>
-            <Link href={'/publication'}>
-              <button>crear publicación</button>
-            </Link>
-            <Link href={'/publication-galery'}>
-              <button>crear publicación-galeria</button>
-            </Link>
-            <Link href={'/category/marcas-y-tiendas'}>
-              <button>Marcas y tiendas</button>
-            </Link>
-            <Link href={'/category/artistas-y-conciertos'}>
-              <button>Artistas y conciertos</button>
-            </Link>
-            <Link href={'/category/torneos'}>
-              <button>Torneos</button>
-            </Link>
-            <Link href={'/:id/detail'}>
-              <button>detalle</button>
-            </Link>
-          </div> */}
         </div>
       </div>
       {/* CONTENIDO */}
-      <div className="bg-red-300 h-[70vh]">
-        <EventCard
-          title={eventsMock[0].title}
-          short_description={eventsMock[0].short_description}
-          votes={eventsMock[0].votes}
-          url={eventsMock[0].url}
-          image={eventsMock[0].image}
+      <div className="py-24 flex flex-col gap-12">
+        <EventSlider
+          title="Populares en Querétaro"
+          subtitle="Lo que las personas piden más"
+          events={eventsMock}
+        />
+        <EventSlider
+          title="Sugerencias para ti"
+          subtitle="Publicaciones que podrías colaborar"
+          events={eventsMock}
+        />
+
+        <Interest />
+
+        <EventSlider
+          title="Recientes"
+          subtitle="Las personas últimanete están hablando de esto"
+          events={eventsMock}
         />
       </div>
     </div>
