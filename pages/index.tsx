@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { eventsMock } from '../lib/data/events.mock';
 import { useCategories } from '../lib/services/categories.services';
 import { NextPageWithLayout } from './page';
@@ -8,6 +9,8 @@ import Interest from '../components/interest/Interest';
 import { Layout } from '../components/layout/Layout';
 import { EventSlider } from '../components/sliders/EventSlider/EventSlider';
 import Tag from '../components/tag/Tag';
+/*data */
+import { categories } from '../lib/data/categories';
 
 const Home: NextPageWithLayout = () => {
   const { data, error, isLoading } = useCategories();
@@ -26,9 +29,11 @@ const Home: NextPageWithLayout = () => {
             <Input />
           </div>
           <section className="flex justify-between sm:justify-center sm:gap-3">
-            <Tag text="Marcas y tiendas" />
-            <Tag text="Artistas y conciertos" />
-            <Tag text="Torneos" />
+            {categories?.map((category) => (
+              <Link key={category.id} href={'/category/' + category.id}>
+                <Tag text={category.name} />
+              </Link>
+            ))}
           </section>
         </div>
       </div>
