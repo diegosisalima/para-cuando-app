@@ -3,16 +3,12 @@ import { useForm } from 'react-hook-form';
 import Logo from '../../components/assets/logo/Logo';
 
 type FormValues = {
-  firstName: string;
-  lastName: string;
   email: string;
   password: string;
 };
-export default function SingUpPage() {
+export default function SingInPage() {
   const { register, handleSubmit } = useForm({
     defaultValues: {
-      firstName: '',
-      lastName: '',
       email: '',
       password: '',
     },
@@ -40,8 +36,8 @@ export default function SingUpPage() {
       <div className="flex flex-col items-center justify-center p-4 sm:p-20 max-w-[580px] mx-auto">
         <div className="w-full text-left flex flex-col gap-8">
           <div>
-            <h1 className="text-[32px] font-medium">Todos votamos :{')'}</h1>
-            <p>Regístrate para ingresar</p>
+            <h1 className="text-[32px] font-medium">¡Hola!</h1>
+            <p>Inicie sesión con los datos que ingresó durante su registro.</p>
           </div>
           <form
             onSubmit={handleSubmit(onSubmit)}
@@ -55,22 +51,6 @@ export default function SingUpPage() {
                 {...register('email')}
               />
             </label>
-            <label className="flex flex-col gap-1">
-              <span className="font-semibold">Nombre</span>
-              <input
-                className="p-4 border border-app-grayDark"
-                type="text"
-                {...register('firstName')}
-              />
-            </label>
-            <label className="flex flex-col gap-1">
-              <span className="font-semibold">Apellido</span>
-              <input
-                className="p-4 border border-app-grayDark"
-                type="text"
-                {...register('lastName')}
-              />
-            </label>
             <label className="flex flex-col">
               <span className="font-semibold">Contraseña</span>
               <input
@@ -80,11 +60,14 @@ export default function SingUpPage() {
               />
             </label>
             <span>
-              ▪ La contraseña debe tener mayúsculas, minúsculas y números
+              ¿Olvidaste tu contraseña?{' '}
+              <Link href={'/find-account'} className="text-app-yellow">
+                recupérala aquí
+              </Link>
             </span>
-            <button className="bg-app-yellow">Crear Cuenta</button>
+            <button className="bg-app-yellow">Iniciar sesión</button>
             <span className="text-app-yellow text-center app-subtitle-2 pt-2">
-              <Link href={'/sign-in'}>O inicia sesión</Link>
+              <Link href={'/sign-up'}>O crea una nueva cuenta</Link>
             </span>
           </form>
         </div>

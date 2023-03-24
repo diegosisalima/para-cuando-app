@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { useState } from 'react';
 /*icons */
 import IconLogo from '../../assets/logo/IconLogo';
@@ -22,7 +23,7 @@ const LblPublication = () => {
   );
 };
 const Header = () => {
-  const [isLogin, setIsLogin] = useState(true);
+  const [isLogin, setIsLogin] = useState(false);
   return (
     <div className="bg-black text-white flex items-center justify-between px-4 sm:px-12 py-4 min-h-[70px] text-sm">
       <IconLogo />
@@ -71,10 +72,10 @@ const Header = () => {
           <>
             <LblPublication />
             <p className="font-medium text-xs leading-[14px] ml-[31px]">
-              Log In
+              <Link href={'/sign-in'}>Log In</Link>
             </p>
             <p className="font-medium text-xs leading-[14px] ml-[21px]">
-              Sign Up
+              <Link href={'/sign-up'}>Sign Up</Link>
             </p>
           </>
         )}
