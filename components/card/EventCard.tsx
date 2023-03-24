@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { useState } from 'react';
 import { Heart } from '../assets/svg/Heart';
 import User from '../assets/svg/User';
-interface EventCardProps {
+interface IEventCardProps {
   title: string;
   short_description: string;
   votes: number;
@@ -10,7 +10,7 @@ interface EventCardProps {
   image: string;
 }
 
-const EventCard: React.FC<EventCardProps> = ({
+const EventCard: React.FC<IEventCardProps> = ({
   title,
   short_description,
   votes,
@@ -25,8 +25,8 @@ const EventCard: React.FC<EventCardProps> = ({
 
   return (
     <div
-      className="absolute h-[454px] bg-white w-[299px] shadow-md
-    rounded-lg "
+      className="h-[454px] bg-white w-[299px] shadow-md
+    rounded-lg mb-2 "
     >
       <Image
         className="rounded-tl-2xl rounded-tr-2xl left-[0%] right-[0%] top-[0%] bottom-[47.36%]"
