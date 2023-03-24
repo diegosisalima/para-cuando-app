@@ -26,7 +26,7 @@ const EventCard: React.FC<IEventCardProps> = ({
   return (
     <div
       className="h-[454px] bg-white w-[299px] shadow-md
-    rounded-lg mb-2 "
+    rounded-lg mb-2 relative"
     >
       <Image
         className="rounded-tl-2xl rounded-tr-2xl left-[0%] right-[0%] top-[0%] bottom-[47.36%]"

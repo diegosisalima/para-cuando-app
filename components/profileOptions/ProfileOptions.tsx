@@ -9,9 +9,9 @@ const ProfileOptions: React.FC<IProfileOptions> = ({ isShow }) => {
     <div
       className={`${
         isShow ? 'right-3' : '-right-52'
-      } absolute top-[70px] z-50 bg-white text-black py-7 text-center rounded-2xl flex flex-col gap-5 `}
+      } absolute top-[70px] z-50 bg-white text-black py-7 text-center rounded-2xl flex flex-col gap-5 border border-app-grayDark `}
     >
-      <div className="flex gap-6 px-9">
+      <div className="flex items-center gap-6 px-9">
         <svg
           width="14"
           height="14"
@@ -28,7 +28,7 @@ const ProfileOptions: React.FC<IProfileOptions> = ({ isShow }) => {
           <p>Configuración</p>
         </Link>
       </div>
-      <div className="flex gap-6 px-9">
+      <div className="flex items-center gap-6 px-9">
         <svg
           width="17"
           height="19"

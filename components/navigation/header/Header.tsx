@@ -2,23 +2,14 @@ import Link from 'next/link';
 import { useState } from 'react';
 /*icons */
 import IconLogo from '../../assets/logo/IconLogo';
+import Plus from '../../assets/svg/Plus';
 import User from '../../assets/svg/User';
+/*components */
 import ProfileOptions from '../../profileOptions/ProfileOptions';
 const LblPublication = () => {
   return (
     <p className="font-medium text-xs leading-[14px] text-app-blue flex justify-center items-center gap-2">
-      <svg
-        width="16"
-        height="16"
-        viewBox="0 0 16 16"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M16 9.14286H9.14286V16H6.85714V9.14286H0V6.85714H6.85714V0H9.14286V6.85714H16V9.14286Z"
-          fill="#1B4DB1"
-        />
-      </svg>
+      <Plus />
       Crear publicación
     </p>
   );
