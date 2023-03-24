@@ -30,6 +30,13 @@ module.exports = {
       boxShadow: {
         'app-card': '0px 2px 4px rgba(0, 0, 0, 0.25)',
       },
+      backgroundImage: {
+        'app-bgSignIn':
+          "linear-gradient(90deg, #000000 -7.73%, rgba(0, 0, 0, 0.59) 37.54%, rgba(0, 0, 0, 0) 98.92%, rgba(0, 0, 0, 0) 98.92%), url('/imagen-de-fondo.png')",
+      },
+      borderRadius: {
+        DEFAULT: '20px',
+      },
     },
   },
   plugins: [],
