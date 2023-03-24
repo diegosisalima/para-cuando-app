@@ -1,9 +1,13 @@
-import Link from 'next/link';
-import Logo from '../components/assets/logo/Logo';
-import { Layout } from '../components/layout/Layout';
+import { eventsMock } from '../lib/data/events.mock';
 import { useCategories } from '../lib/services/categories.services';
-
 import { NextPageWithLayout } from './page';
+/*components */
+import Logo from '../components/assets/logo/Logo';
+import Input from '../components/input/Input';
+import Interest from '../components/interest/Interest';
+import { Layout } from '../components/layout/Layout';
+import { EventSlider } from '../components/sliders/EventSlider/EventSlider';
+import Tag from '../components/tag/Tag';
 
 const Home: NextPageWithLayout = () => {
   const { data, error, isLoading } = useCategories();
@@ -13,31 +17,42 @@ const Home: NextPageWithLayout = () => {
   return (
     <div>
       {/* HERO SECTION */}
-      <div className='min-h-[488px] flex justify-center items-center flex-col bg-[url("/hero-banner.png")] bg-cover bg-center app-banner -mt-4 gap-5'>
+      <div className='min-h-[488px] flex justify-center items-center flex-col bg-[url("/hero-banner.png")] bg-cover bg-center app-banner -mt-4 gap-8'>
         <div>
           <Logo />
         </div>
         <div className="flex flex-col gap-4">
-          <input
-            className="px-6 py-4 rounded-3xl w-full sm:w-[465px]"
-            type="text"
-            placeholder="¿Qué quieres ver en tu ciudad?"
-          />
-          <div className="flex items-center justify-center gap-2">
-            <Link href={'/category/marcas-y-tiendas'}>
-              <button>Marcas y tiendas</button>
-            </Link>
-            <Link href={'/category/marcas-y-tiendas'}>
-              <button>Artistas y conciertos</button>
-            </Link>
-            <Link href={'/category/marcas-y-tiendas'}>
-              <button>Torneos</button>
-            </Link>
+          <div className="w-[372px] relative sm:w-[465px]">
+            <Input />
           </div>
+          <section className="flex justify-between sm:justify-center sm:gap-3">
+            <Tag text="Marcas y tiendas" />
+            <Tag text="Artistas y conciertos" />
+            <Tag text="Torneos" />
+          </section>
         </div>
       </div>
       {/* CONTENIDO */}
-      <div className="bg-red-300 h-[70vh]">CONTENIDO</div>
+      <div className="py-24 flex flex-col gap-12">
+        <EventSlider
+          title="Populares en Querétaro"
+          subtitle="Lo que las personas piden más"
+          events={eventsMock}
+        />
+        <EventSlider
+          title="Sugerencias para ti"
+          subtitle="Publicaciones que podrías colaborar"
+          events={eventsMock}
+        />
+
+        <Interest />
+
+        <EventSlider
+          title="Recientes"
+          subtitle="Las personas últimanete están hablando de esto"
+          events={eventsMock}
+        />
+      </div>
     </div>
   );
 };
