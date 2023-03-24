@@ -65,7 +65,7 @@ h-[23px] flex-none ml-[20px]"
         {url}
       </a>
       <div className="ml-[15px] mt-[5px]">
-        <User />
+        <User stroke="black" />
       </div>
       <p className="ml-[10px] mt-[5px] absolute left-[15.25%]  top-[81.15%] ">
         {votes} votes
