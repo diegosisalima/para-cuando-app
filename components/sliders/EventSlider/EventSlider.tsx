@@ -2,11 +2,12 @@ import { FC } from 'react';
 import { BsArrowRightCircle } from 'react-icons/bs';
 import 'swiper/css';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import EventCard from '../../card/EventCard';
 
 interface IEventSlider {
   title?: string;
   subtitle?: string;
-  events: [];
+  events: IEvents[];
 }
 
 export const EventSlider: FC<IEventSlider> = ({ title, subtitle, events }) => {
@@ -14,7 +15,7 @@ export const EventSlider: FC<IEventSlider> = ({ title, subtitle, events }) => {
     <div>
       <div className="pb-6">
         <h2 className="app-title-2 pb-1">{title}</h2>
-        <p className="app-subtitle-2">{subtitle}</p>
+        <p className="app-subtitle-2 text-app-grayDark">{subtitle}</p>
       </div>
       <div className="relative">
         <Swiper
@@ -44,8 +45,16 @@ export const EventSlider: FC<IEventSlider> = ({ title, subtitle, events }) => {
             },
           }}
         >
-          {events?.map((event, index) => (
-            <SwiperSlide key={index}>{index}</SwiperSlide>
+          {events?.map((event) => (
+            <SwiperSlide key={event.id}>
+              <EventCard
+                title={event.title}
+                short_description={event.short_description}
+                votes={event.votes}
+                url={event.url}
+                image={event.image}
+              />
+            </SwiperSlide>
           ))}
           <div className="hidden sm:flex items-center absolute top-0 bottom-0 -right-20 left-auto cursor-pointer">
             <SlideNextButton />
@@ -58,6 +67,7 @@ export const EventSlider: FC<IEventSlider> = ({ title, subtitle, events }) => {
 
 // some-inner-component.jsx
 import { useSwiper } from 'swiper/react';
+import { IEvents } from '../../../lib/interfaces/event.interface';
 
 interface ISlideNextButton {
   className?: string;
