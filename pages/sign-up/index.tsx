@@ -6,7 +6,6 @@ type FormValues = {
   firstName: string;
   lastName: string;
   email: string;
-  userName: string;
   password: string;
 };
 export default function SingUpPage() {
@@ -15,7 +14,6 @@ export default function SingUpPage() {
       firstName: '',
       lastName: '',
       email: '',
-      userName: '',
       password: '',
     },
   });
@@ -33,45 +31,22 @@ export default function SingUpPage() {
   };
 
   return (
-    <div className="grid md:grid-cols-2 h-screen">
-      <div className='bg-[url("/login-banner.png")] md:flex items-center justify-center hidden '></div>
-      <div className="flex flex-col items-center justify-center p-4 sm:p-20 max-w-[580px] mx-auto">
+    <div className='bg-[url("/imagen-de-fondo.png")] grid md:grid-cols-2 h-screen flex'>
+      <div className="md:flex items-center justify-center hidden ">
         <Link href={'/'}>
-          <Logo variant="blue" onlyIcon={true} />
+          <Logo variant="yellow" onlyIcon={false} />
         </Link>
+      </div>
+      <div className="flex flex-col items-center justify-center p-4 sm:p-20 max-w-[580px] mx-auto">
         <div className="w-full text-left flex flex-col gap-8">
           <div>
-            <h1 className="text-[32px] font-medium">Sign Up</h1>
-            <p>Sign Up with the data you entered during your registration.</p>
+            <h1 className="text-[32px] font-medium">Todos votamos :{')'}</h1>
+            <p>Regístrate para ingresar</p>
           </div>
           <form
             onSubmit={handleSubmit(onSubmit)}
             className="flex flex-col gap-3"
           >
-            <label className="flex flex-col gap-1">
-              <span className="font-semibold">First Name</span>
-              <input
-                className="p-4 border border-app-grayDark"
-                type="text"
-                {...register('firstName')}
-              />
-            </label>
-            <label className="flex flex-col gap-1">
-              <span className="font-semibold">Last Name</span>
-              <input
-                className="p-4 border border-app-grayDark"
-                type="text"
-                {...register('lastName')}
-              />
-            </label>
-            <label className="flex flex-col gap-1">
-              <span className="font-semibold">Username</span>
-              <input
-                className="p-4 border border-app-grayDark"
-                type="text"
-                {...register('userName')}
-              />
-            </label>
             <label className="flex flex-col gap-1">
               <span className="font-semibold">Email</span>
               <input
@@ -80,17 +55,36 @@ export default function SingUpPage() {
                 {...register('email')}
               />
             </label>
+            <label className="flex flex-col gap-1">
+              <span className="font-semibold">Nombre</span>
+              <input
+                className="p-4 border border-app-grayDark"
+                type="text"
+                {...register('firstName')}
+              />
+            </label>
+            <label className="flex flex-col gap-1">
+              <span className="font-semibold">Apellido</span>
+              <input
+                className="p-4 border border-app-grayDark"
+                type="text"
+                {...register('lastName')}
+              />
+            </label>
             <label className="flex flex-col">
-              <span className="font-semibold">Password</span>
+              <span className="font-semibold">Contraseña</span>
               <input
                 className="p-4 border border-app-grayDark"
                 type="password"
                 {...register('password')}
               />
             </label>
-            <button>Sign Up</button>
-            <span className="text-center app-subtitle-2 pt-2">
-              Did you forget your password?
+            <span>
+              ▪ La contraseña debe tener mayúsculas, minúsculas y números
+            </span>
+            <button className="bg-app-yellow">Crear Cuenta</button>
+            <span className="text-app-yellow text-center app-subtitle-2 pt-2">
+              <Link href={'/sign-in'}>O inicia sesión</Link>
             </span>
           </form>
         </div>
