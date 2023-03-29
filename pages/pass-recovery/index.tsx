@@ -26,7 +26,7 @@ export default function PassRecovery() {
     <div className='bg-[url("/imagen-de-fondo.png")] grid md:grid-cols-2 h-screen flex'>
       <div className="md:flex items-center justify-center hidden "></div>
       <div className="flex flex-col items-center justify-center p-4 sm:p-20 max-w-[580px] mx-auto">
-        <div className="w-full text-left flex flex-col gap-8">
+        <div className="w-full text-left flex flex-col gap-8 bg-black opacity-80 sm:w-[557px] h-[529px] rounded items-center justify-center p-4 sm:p-14 max-w-[580px] border border-[#A7A6A7] border-style-dashed text-app-grayLight ">
           <div>
             <h1 className="text-[32px] font-medium">
               Elige una nueva contraseña
@@ -39,7 +39,7 @@ export default function PassRecovery() {
             <label className="flex flex-col gap-1">
               <span className="font-semibold">Elige una nueva contraseña</span>
               <input
-                className="p-4 border border-app-grayDark"
+                className="p-4 border border-app-grayDark bg-transparent rounded-xl"
                 type="password"
                 {...register('password')}
               />
@@ -47,12 +47,14 @@ export default function PassRecovery() {
             <label className="flex flex-col">
               <span className="font-semibold">Escríbela de nuevo</span>
               <input
-                className="p-4 border border-app-grayDark"
+                className="p-4 border border-app-grayDark bg-transparent rounded-xl"
                 type="password"
                 {...register('password')}
               />
             </label>
-            <button className="bg-app-yellow">Cambiar la contraseña</button>
+            <button className="bg-app-yellow text-app-black">
+              Cambiar la contraseña
+            </button>
           </form>
         </div>
       </div>

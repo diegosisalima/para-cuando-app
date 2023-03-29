@@ -27,14 +27,20 @@ export default function SingInPage() {
   };
 
   return (
-    <div className="relative bg-app-bgSignIn bg-cover bg-center grid md:grid-cols-2 h-screen flex ">
-      <div className="md:flex items-center justify-center hidden">
+    <div className="px-4 relative bg-app-bgSignIn bg-cover bg-center min-h-screen flex flex-col justify-around items-center md:flex-row ">
+      <div className="md:flex items-center justify-center">
         <Link href={'/'}>
           <Logo variant="yellow" onlyIcon={false} />
         </Link>
       </div>
-      <div className="absolute bg-black opacity-80 w-[557px] h-[529px] right-0 top-[10%] left-[50%] rounded flex flex-col items-center justify-center p-4 sm:p-20 max-w-[580px] mx-auto border border-[#A7A6A7] border-style-dashed">
-        <div className="w-full text-left flex flex-col gap-8">
+      <div className="bg-black opacity-80 w-full sm:w-[557px] h-[529px] rounded flex flex-col items-center justify-center p-4 sm:p-14 max-w-[580px] border border-[#A7A6A7] border-style-dashed">
+        <div className="w-full text-left flex flex-col gap-8 relative">
+          <Link
+            href={'/'}
+            className="text-app-yellow border border-app-yellow rounded-[50%] absolute right-0 -top-5 w-7 h-7 flex justify-center items-center"
+          >
+            X
+          </Link>
           <div className="text-app-grayLight">
             <h1 className="text-[32px] font-medium">¡Hola!</h1>
             <p>Inicie sesión con los datos que ingresó durante su registro.</p>
@@ -62,7 +68,7 @@ export default function SingInPage() {
                 {...register('password')}
               />
             </label>
-            <span className="text-app-grayLight">
+            <span className="text-app-grayLight text-center">
               ¿Olvidaste tu contraseña?{' '}
               <Link
                 href={'/find-account'}
