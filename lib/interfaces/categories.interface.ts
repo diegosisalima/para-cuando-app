@@ -18,3 +18,10 @@ export interface Category {
   created_at: string;
   updated_at: string;
 }
+export interface Publicacion {
+  titulo: string;
+  tipo: string;
+  categoria: string;
+  porqueRecomiendas: string;
+  linkReferencia: string;
+}

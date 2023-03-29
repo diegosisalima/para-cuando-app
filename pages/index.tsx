@@ -1,3 +1,6 @@
+import Logo from '../components/assets/logo/Logo';
+import Input from '../components/input/Input';
+import { Layout } from '../components/layout/Layout';
 import Link from 'next/link';
 import { eventsMock } from '../lib/data/events.mock';
 import { useCategories } from '../lib/services/categories.services';
