@@ -8,10 +8,13 @@ import User from '../../assets/svg/User';
 import ProfileOptions from '../../profileOptions/ProfileOptions';
 const LblPublication = () => {
   return (
-    <p className="font-medium text-xs leading-[14px] text-app-blue flex justify-center items-center gap-2">
+    <Link
+      href={'/publications/publicaciones'}
+      className="font-medium text-xs leading-[14px] text-app-blue flex justify-center items-center gap-2"
+    >
       <Plus />
       Crear publicación
-    </p>
+    </Link>
   );
 };
 const Header = () => {
