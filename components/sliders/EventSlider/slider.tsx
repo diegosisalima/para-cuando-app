@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
-import EventCard from '../../card/card';
+import EventCard from '../../card/EventCard';
 
 interface events {
   title: string;
