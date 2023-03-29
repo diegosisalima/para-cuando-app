@@ -36,40 +36,34 @@ const EventCard: React.FC<IEventCardProps> = ({
         alt={title}
       />
       <Heart
-        className="absolute left-[75.25%] right-[7.36%] top-[40.15%] bottom-[44.15%]"
-        isActive
+        className="absolute left-[75.25%] right-[7.36%] top-[40.15%] bottom-[44.15%] hover:cursor-pointer"
+        isActive={isClicked}
         onClick={handleClick}
-      >
-        {isClicked ? 'Registrado' : 'Registrarse'}
-      </Heart>
-
-      <strong>
-        <h1
-          className="font-semibold mt-[20px] mb-[7px] text-xl leading-[26px] text-[#1A1E2E] w-[253.31px]
-h-[23px] flex-none ml-[20px]"
-        >
-          {title}
-        </h1>{' '}
-      </strong>
-
-      <div className="relative w-254 h-[72px] mr-[5px] ml-[5px]">
-        <p className="w-full h-full overflow-hidden text-[#6E6A6C] bg-gradient-to-b from-transparent to-white text-[15px]">
-          {short_description}
-        </p>
-      </div>
-
-      <a
-        className="text-[#1B4DB1] h-[16px] left-9.15% right-61.08% top-[366px] ml-[10px] "
-        href={url}
-      >
-        {url}
-      </a>
-      <div className="ml-[15px] mt-[5px]">
-        <User stroke="black" />
-      </div>
-      <p className="ml-[10px] mt-[5px] absolute left-[15.25%]  top-[81.15%] ">
-        {votes} votes
-      </p>
+      ></Heart>
+      <section className="px-6 pt-6 ">
+        <strong>
+          <h1 className="app-title-3">{title}</h1>
+        </strong>
+        <div className="h-[72px]">
+          <p className="h-full overflow-hidden py-1 app-texto-1 text-app-grayDark">
+            {short_description}
+          </p>
+        </div>
+        <section className="absolute bottom-10">
+          <a
+            className="text-app-blue"
+            href={url}
+            rel="noreferrer"
+            target="_blank"
+          >
+            {url}
+          </a>
+          <div className="flex items-center ">
+            <User stroke="black" />
+            {votes} votes
+          </div>
+        </section>
+      </section>
     </div>
   );
 };
