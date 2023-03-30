@@ -1,8 +1,10 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { useState } from 'react';
 import { Heart } from '../assets/svg/Heart';
 import User from '../assets/svg/User';
 interface IEventCardProps {
+  id: number;
   title: string;
   short_description: string;
   votes: number;
@@ -11,6 +13,7 @@ interface IEventCardProps {
 }
 
 const EventCard: React.FC<IEventCardProps> = ({
+  id,
   title,
   short_description,
   votes,
@@ -28,13 +31,15 @@ const EventCard: React.FC<IEventCardProps> = ({
       className="h-[454px] bg-white w-[299px] shadow-md
     rounded-lg mb-2 relative"
     >
-      <Image
-        className="rounded-tl-2xl rounded-tr-2xl left-[0%] right-[0%] top-[0%] bottom-[47.36%]"
-        width={299}
-        height={450}
-        src={image}
-        alt={title}
-      />
+      <Link href={`/detail/${id}`} target="_parent">
+        <Image
+          className="rounded-tl-2xl rounded-tr-2xl left-[0%] right-[0%] top-[0%] bottom-[47.36%]"
+          width={299}
+          height={450}
+          src={image}
+          alt={title}
+        />
+      </Link>
       <Heart
         className="absolute left-[75.25%] right-[7.36%] top-[40.15%] bottom-[44.15%] hover:cursor-pointer"
         isActive={isClicked}

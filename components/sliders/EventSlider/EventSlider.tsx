@@ -48,6 +48,7 @@ export const EventSlider: FC<IEventSlider> = ({ title, subtitle, events }) => {
           {events?.map((event) => (
             <SwiperSlide key={event.id}>
               <EventCard
+                id={event.id}
                 title={event.title}
                 short_description={event.short_description}
                 votes={event.votes}
