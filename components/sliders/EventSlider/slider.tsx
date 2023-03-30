@@ -2,6 +2,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import EventCard from '../../card/EventCard';
 
 interface events {
+  id: number;
   title: string;
   short_description: string;
   votes: number;
@@ -19,6 +20,7 @@ const Slider: React.FC<SliderProps> = ({ events }) => {
       {events.map((event, index) => (
         <SwiperSlide key={index}>
           <EventCard
+            id={event.id}
             image={event.image}
             title={event.title}
             short_description={event.short_description}
