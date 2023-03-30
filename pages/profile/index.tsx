@@ -27,38 +27,7 @@ export const ProfilePage: NextPageWithLayout = () => {
       </section>
       <section className="pt-16 flex flex-col items-center gap-8 sm:flex-row sm:flex-wrap sm:justify-center">
         <EventCard
-          title="Tienda Zara"
-          short_description="Tienda por departamento de marca de ropa y
-accesorios."
-          votes={1345}
-          url="tiendazara.com"
-          image="/mock-event-image.png"
-        />
-        <EventCard
-          title="Tienda Zara"
-          short_description="Tienda por departamento de marca de ropa y
-accesorios."
-          votes={1345}
-          url="tiendazara.com"
-          image="/mock-event-image.png"
-        />
-        <EventCard
-          title="Tienda Zara"
-          short_description="Tienda por departamento de marca de ropa y
-accesorios."
-          votes={1345}
-          url="tiendazara.com"
-          image="/mock-event-image.png"
-        />
-        <EventCard
-          title="Tienda Zara"
-          short_description="Tienda por departamento de marca de ropa y
-accesorios."
-          votes={1345}
-          url="tiendazara.com"
-          image="/mock-event-image.png"
-        />
-        <EventCard
+          id={2}
           title="Tienda Zara"
           short_description="Tienda por departamento de marca de ropa y
 accesorios."
