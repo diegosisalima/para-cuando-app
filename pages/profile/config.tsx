@@ -50,7 +50,7 @@ export const ConfigPage: NextPageWithLayout = () => {
           <AddCategory />
           <AddCategory />
         </section>
-        <div className="mx-auto pt-11 pb-20 w-44">
+        <div className="text-center pt-11 pb-20">
           <BtnBlue text="Guardar cambios" />
         </div>
       </section>
