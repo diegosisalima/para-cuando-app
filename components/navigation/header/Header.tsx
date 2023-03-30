@@ -57,7 +57,7 @@ const Header = () => {
               <p>mis votos</p>
             </div>
             <div className="flex items-center gap-3 ">
-              <Link href="/profile">
+              <Link href="/profile" target={'_parent'}>
                 <div className="flex justify-center items-center gap-3 hover:cursor-pointer">
                   <User stroke="white" />
                   <p>example@gmail.com</p>
