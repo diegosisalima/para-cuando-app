@@ -36,7 +36,7 @@ accesorios."
           image="/mock-event-image.png"
         />
       </section>
-      <div className="w-32 mx-auto pt-20 pb-16">
+      <div className="w-[128px] mx-auto pt-20 pb-16">
         <BtnBlue text="Ver más" />
       </div>
     </div>

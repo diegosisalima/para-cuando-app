@@ -79,7 +79,7 @@ export const DetailPage: NextPageWithLayout = () => {
             alt={currentEvent?.title || 'none'}
           />
         </div>
-        <div className="w-full pt-8 md:hidden">
+        <div className="w-full pt-[32px] md:hidden">
           <BtnBlue text="Votar" />
         </div>
       </section>
