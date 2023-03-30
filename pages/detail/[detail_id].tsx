@@ -44,9 +44,9 @@ export const DetailPage: NextPageWithLayout = () => {
             </Link>
           ))}
         </div>
-        <div className="relative w-96">
+        <Link href={'/search'} className="relative w-96">
           <Input />
-        </div>
+        </Link>
       </section>
       <section className="pt-14 pb-20 md:flex gap-4 justify-center">
         <div className="md:w-96">

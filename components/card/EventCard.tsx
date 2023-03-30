@@ -31,7 +31,7 @@ const EventCard: React.FC<IEventCardProps> = ({
       className="h-[454px] bg-white w-[299px] shadow-md
     rounded-lg mb-2 relative"
     >
-      <Link href={`/detail/${id}`}>
+      <Link href={`/detail/${id}`} target="_parent">
         <Image
           className="rounded-tl-2xl rounded-tr-2xl left-[0%] right-[0%] top-[0%] bottom-[47.36%]"
           width={299}
