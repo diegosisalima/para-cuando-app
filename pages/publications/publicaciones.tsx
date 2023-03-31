@@ -74,7 +74,7 @@ const Publicaciones = () => {
             />
           </div>
 
-          <div className="float-left mb-6">
+          <div className="mb-6 sm:float-left">
             <label className="block w-1/2 mb-2 text-gray-700">Tipo</label>
             <input
               className="w-full px-3 py-2 leading-tight border border-gray-500 rounded-lg appearance-none focus:outline-none focus:shadow-outline"
@@ -84,7 +84,7 @@ const Publicaciones = () => {
               onChange={handleChange}
             />
           </div>
-          <div className="float-right mb-6">
+          <div className="mb-6 sm:float-right">
             <label className="block mb-2 text-gray-700">Categoría</label>
             <input
               className="w-full px-3 py-2 leading-tight border border-gray-500 rounded-lg appearance-none focus:outline-none focus:shadow-outline"
