@@ -1,40 +1,44 @@
+import Cookie from 'js-cookie';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { useForm } from 'react-hook-form';
 import Logo from '../../components/assets/logo/Logo';
+import { login } from '../../lib/services/auth.service';
 
 type FormValues = {
   email: string;
   password: string;
 };
 export default function SingInPage() {
-  const { register, handleSubmit } = useForm({
+  const router = useRouter();
+  const { register, handleSubmit, reset } = useForm({
     defaultValues: {
       email: '',
       password: '',
     },
   });
 
-  const onSubmit = async (data: FormValues) => {
-    console.log(data);
-
-    // createUser(data)
-    //   .then((resp) => {
-    //     console.log(resp);
-    //   })
-    //   .catch((error) => {
-    //     console.log(error);
-    //   });
+  const onSubmit = (data: FormValues) => {
+    login(data)
+      .then((resp) => {
+        Cookie.set('token', resp.data.token);
+        router.push('/profile');
+      })
+      .catch(() => {
+        alert('credenciales iincorrectas');
+        reset();
+      });
   };
 
   return (
-    <div className="px-4 relative bg-app-bgSignIn bg-cover bg-center min-h-screen flex flex-col justify-around items-center md:flex-row ">
-      <div className="md:flex items-center justify-center">
+    <div className="relative flex flex-col items-center justify-around min-h-screen px-4 bg-center bg-cover bg-app-bgSignIn md:flex-row ">
+      <div className="items-center justify-center md:flex">
         <Link href={'/'}>
           <Logo variant="yellow" onlyIcon={false} />
         </Link>
       </div>
       <div className="bg-black opacity-80 w-full sm:w-[557px] h-[529px] rounded flex flex-col items-center justify-center p-4 sm:p-14 max-w-[580px] border border-[#A7A6A7] border-style-dashed">
-        <div className="w-full text-left flex flex-col gap-8 relative">
+        <div className="relative flex flex-col w-full gap-8 text-left">
           <Link
             href={'/'}
             className="text-app-yellow border border-app-yellow rounded-[50%] absolute right-0 -top-5 w-7 h-7 flex justify-center items-center"
@@ -68,17 +72,17 @@ export default function SingInPage() {
                 {...register('password')}
               />
             </label>
-            <span className="text-app-grayLight text-center">
+            <span className="text-center text-app-grayLight">
               ¿Olvidaste tu contraseña?{' '}
               <Link
                 href={'/find-account'}
-                className="text-app-yellow underline underline-offset-1"
+                className="underline text-app-yellow underline-offset-1"
               >
                 recupérala aquí
               </Link>
             </span>
             <button className="bg-app-yellow p-[18px]">Iniciar sesión</button>
-            <span className="text-app-yellow text-center app-subtitle-2 pt-2 underline underline-offset-1">
+            <span className="pt-2 text-center underline text-app-yellow app-subtitle-2 underline-offset-1">
               <Link href={'/sign-up'}>O crea una nueva cuenta</Link>
             </span>
           </form>

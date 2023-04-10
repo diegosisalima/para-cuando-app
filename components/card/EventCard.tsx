@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { useState } from 'react';
+import { useUserMe } from '../../lib/services/user.services';
 import { Heart } from '../assets/svg/Heart';
 import User from '../assets/svg/User';
 interface IEventCardProps {
@@ -20,10 +22,23 @@ const EventCard: React.FC<IEventCardProps> = ({
   url,
   image,
 }) => {
+  const router = useRouter();
   const [isClicked, setIsClicked] = useState(false);
+  const [votes1, setVotes1] = useState(votes);
+
+  const { data: login } = useUserMe();
 
   const handleClick = () => {
-    setIsClicked(!isClicked);
+    if (login) {
+      setIsClicked(!isClicked);
+      if (isClicked) {
+        setVotes1(votes);
+      } else {
+        setVotes1(votes + 1);
+      }
+    } else {
+      return router.push('/login');
+    }
   };
 
   return (
@@ -50,7 +65,7 @@ const EventCard: React.FC<IEventCardProps> = ({
           <h1 className="app-title-3">{title}</h1>
         </strong>
         <div className="h-[72px]">
-          <p className="h-full overflow-hidden py-1 app-texto-1 text-app-grayDark">
+          <p className="h-full py-1 overflow-hidden app-texto-1 text-app-grayDark">
             {short_description}
           </p>
         </div>
@@ -65,7 +80,7 @@ const EventCard: React.FC<IEventCardProps> = ({
           </a>
           <div className="flex items-center ">
             <User stroke="black" />
-            {votes} votes
+            {votes1} votes
           </div>
         </section>
       </section>

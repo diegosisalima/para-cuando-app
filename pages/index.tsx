@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { eventsMock } from '../lib/data/events.mock';
-import { useCategories } from '../lib/services/categories.services';
+// import { useCategories } from '../lib/services/categories.services';
 import { NextPageWithLayout } from './page';
 /*components */
 import Logo from '../components/assets/logo/Logo';
@@ -11,11 +11,13 @@ import { EventSlider } from '../components/sliders/EventSlider/EventSlider';
 import Tag from '../components/tag/Tag';
 /*data */
 import { categories } from '../lib/data/categories';
-
 const Home: NextPageWithLayout = () => {
-  const { data, error, isLoading } = useCategories();
+  // const { data, error, isLoading } = useCategories();
 
-  console.log({ data, error, isLoading });
+  // console.log({ data, error, isLoading });
+  // const { data: publicationResponse } = usePublications();
+
+  // const publications = publicationResponse?.results;
 
   return (
     <div>
@@ -38,7 +40,7 @@ const Home: NextPageWithLayout = () => {
         </div>
       </div>
       {/* CONTENIDO */}
-      <div className="py-24 flex flex-col gap-12">
+      <div className="flex flex-col gap-12 py-24">
         <EventSlider
           title="Populares en Querétaro"
           subtitle="Lo que las personas piden más"

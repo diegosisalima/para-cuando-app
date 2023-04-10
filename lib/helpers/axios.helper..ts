@@ -1,8 +1,8 @@
 import axios from 'axios';
-// import Cookie from 'js-cookie';
+import Cookie from 'js-cookie';
 import getConfig from 'next/config';
 import Router from 'next/router';
-
+Cookie.set('nombre', 'juan');
 const { publicRuntimeConfig } = getConfig();
 const BASE_URL = publicRuntimeConfig.BASE_URL;
 
@@ -29,7 +29,6 @@ instance.interceptors.request.use(
 
 export default instance;
 
-async function getTokenFromCookie() {
-  return null;
-  // return Cookie.get('token');
+function getTokenFromCookie() {
+  return Cookie.get('token');
 }
