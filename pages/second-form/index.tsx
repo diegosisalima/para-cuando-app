@@ -122,10 +122,7 @@ const SecondForm: React.FC<Publicacion> = ({
       </div>
       <div className="flex flex-col items-center bg-white sm:w-[100%] ">
         <button className="mt-6">
-          <Link
-            className="text-lg text-blue-600"
-            href="/publications/publicaciones"
-          >
+          <Link className="text-lg text-blue-600" href="/publications">
             Black
           </Link>
         </button>

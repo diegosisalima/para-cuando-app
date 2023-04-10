@@ -8,9 +8,9 @@ import Tag from '../../components/tag/Tag';
 export const ProfilePage: NextPageWithLayout = () => {
   return (
     <div>
-      <div className="app-banner -mt-4 h-32 bg-app-blue relative">
+      <div className="relative h-32 -mt-4 app-banner bg-app-blue">
         <Image
-          className="rounded-full absolute -bottom-14 -translate-x-2/4 left-2/4"
+          className="absolute rounded-full -bottom-14 -translate-x-2/4 left-2/4"
           width={117}
           height={117}
           alt={'user'}
@@ -25,7 +25,7 @@ export const ProfilePage: NextPageWithLayout = () => {
           <Tag text="Mis publicaciones" />
         </div>
       </section>
-      <section className="pt-16 flex flex-col items-center gap-8 sm:flex-row sm:flex-wrap sm:justify-center">
+      <section className="flex flex-col items-center gap-8 pt-16 sm:flex-row sm:flex-wrap sm:justify-center">
         <EventCard
           id={2}
           title="Tienda Zara"

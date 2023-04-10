@@ -5,11 +5,12 @@ import IconLogo from '../../assets/logo/IconLogo';
 import Plus from '../../assets/svg/Plus';
 import User from '../../assets/svg/User';
 /*components */
+import { useUserMe } from '../../../lib/services/user.services';
 import ProfileOptions from '../../profileOptions/ProfileOptions';
 const LblPublication = () => {
   return (
     <Link
-      href={'/publications/publicaciones'}
+      href={'/publications'}
       className="font-medium text-xs leading-[14px] text-app-blue flex justify-center items-center gap-2"
     >
       <Plus />
@@ -18,27 +19,22 @@ const LblPublication = () => {
   );
 };
 const Header = () => {
-  const [isLogin, setIsLogin] = useState(true);
   const [isShow, setIsShow] = useState(false);
+  const { data: login } = useUserMe();
+  console.log(login);
+
   return (
     <div className="bg-black text-white flex items-center justify-between px-4 sm:px-12 py-4 min-h-[70px] text-sm relative">
-      <div
-        className="absolute top-[70px] z-50 bg-red-400 text-black -translate-x-2/4 left-2/4 hover:cursor-pointer"
-        onClick={() => setIsLogin(!isLogin)}
-      >
-        click aqui para cambiar el estatus a login ={' '}
-        {isLogin ? 'false' : 'true'}
-      </div>
       <Link href={'/'}>
         <IconLogo />
       </Link>
       <nav className="flex sm:gap-12">
-        {isLogin ? (
+        {login ? (
           <>
-            <div className="hidden md:flex justify-center items-center hover:cursor-pointer">
+            <div className="items-center justify-center hidden md:flex hover:cursor-pointer">
               <LblPublication />
             </div>
-            <div className="hidden md:flex justify-center items-center gap-2 hover:cursor-pointer">
+            <div className="items-center justify-center hidden gap-2 md:flex hover:cursor-pointer">
               <svg
                 width="19"
                 height="16"
@@ -58,7 +54,7 @@ const Header = () => {
             </div>
             <div className="flex items-center gap-3 ">
               <Link href="/profile" target={'_parent'}>
-                <div className="flex justify-center items-center gap-3 hover:cursor-pointer">
+                <div className="flex items-center justify-center gap-3 hover:cursor-pointer">
                   <User stroke="white" />
                   <p>example@gmail.com</p>
                 </div>

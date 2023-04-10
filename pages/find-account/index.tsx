@@ -25,7 +25,7 @@ export default function FindAccount() {
 
   return (
     <div className='bg-[url("/imagen-de-fondo.png")] grid md:grid-cols-2 h-screen flex'>
-      <div className="md:flex items-center justify-center hidden "></div>
+      <div className="items-center justify-center hidden md:flex "></div>
       <div className="flex flex-col items-center justify-center p-4 sm:p-20 max-w-[580px] mx-auto">
         <div className="w-full text-left flex flex-col gap-8 bg-black opacity-80 sm:w-[557px] h-[529px] rounded items-center justify-center p-4 sm:p-14 max-w-[580px] border border-[#A7A6A7] border-style-dashed text-app-grayLight">
           <div>
@@ -41,7 +41,7 @@ export default function FindAccount() {
                 electrónico que puedes haber utilizado con Para cuándo?
               </span>
               <input
-                className="p-4 border border-app-grayDark bg-transparent rounded-xl"
+                className="p-4 bg-transparent border border-app-grayDark rounded-xl"
                 type="email"
                 {...register('email')}
               />
