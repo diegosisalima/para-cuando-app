@@ -82,10 +82,10 @@ const Header = () => {
           <>
             <LblPublication />
             <p className="font-medium text-xs leading-[14px] ml-[31px]">
-              <Link href={'/sign-in'}>Log In</Link>
+              <Link href={'/login'}>Log In</Link>
             </p>
             <p className="font-medium text-xs leading-[14px] ml-[21px]">
-              <Link href={'/sign-up'}>Sign Up</Link>
+              <Link href={'/sing-up'}>Sign Up</Link>
             </p>
           </>
         )}

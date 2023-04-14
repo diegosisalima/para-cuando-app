@@ -25,5 +25,5 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/profile/:path*', '/create-event', '/publications'],
+  matcher: ['/profile/:path*', '/create-event'],
 };

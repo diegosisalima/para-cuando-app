@@ -138,17 +138,17 @@ const Publicaciones = () => {
             Black
           </Link>
         </button>
-        <div className="w-11/12 h-5 my-6 rounded-full bg-slate-300">
-          <p className="w-[65%px] sm:w-[65%] bg-blue-800 h-[10px] rounded-full"></p>
+        <div className="w-11/12 h-[10px] my-6 rounded-full bg-slate-300">
+          <p className="w-[65%] sm:w-[65%] bg-blue-800 h-[10px] rounded-full"></p>
         </div>
 
         <form onSubmit={handleSubmit(onSubmit)} className="w-full max-w-lg">
           {step === 1 && (
             <div className="">
-              <div className="mt-10 sm:mx-auto sm:w-[1200px]  sm:max-w-screen-sm font-roboto">
+              <div className="mt-10 sm:mx-auto sm:w-[1200px] sm:h-[682px]  sm:max-w-screen-sm font-roboto">
                 <h1 className="mt-8 text-2xl font-bold">Publicación</h1>
                 <p className="text-[#6E6A6C] mt-2">Información básica</p>
-                <div className="relative mt-4 mb-4">
+                <div className="relative mb-4 sm:mt-[45px] sm:mb-[30px] ">
                   <label
                     htmlFor="title"
                     className={`block mb-2 absolute text-gray-500 top-0 left-3 bg-white px-1 transition-all duration-300 ease-in-out ${labelClass}`}
@@ -164,7 +164,7 @@ const Publicaciones = () => {
                     onBlur={() => handleBlur('title')}
                   />
                 </div>
-                <div className="flex flex-col mb-4 sm:flex-row">
+                <div className="flex flex-col sm:mb-[40px] mb-4 sm:flex-row">
                   <div className="w-full text-gray-500 sm:w-1/2 sm:mr-2">
                     <label
                       htmlFor="type"
@@ -238,7 +238,7 @@ const Publicaciones = () => {
                 <div className="flex justify-center py-5">
                   <button
                     type="button"
-                    className="px-4 py-2 text-white bg-blue-800 rounded-full hover:bg-blue-500"
+                    className="px-4 py-2 w-[120px] h-[55px] text-white bg-blue-800 rounded-full hover:bg-blue-500"
                     onClick={() => {
                       errorNext()
                         ? alert('Completa los datos de la publicacion')
@@ -253,22 +253,22 @@ const Publicaciones = () => {
           )}
           {step === 2 && (
             <>
-              <div className="mt-10 md:mx-auto md:w-4/6 md:max-w-screen-sm">
+              <div className="mt-[40px] sm:mx-auto  sm:h-[682px] w-[550px] sm:ml-[-50px] ">
                 <h1
-                  className="pt-10 mt-5 font-semibold"
+                  className="flex justify-center pt-10 mt-5 font-semibold text-[28px] "
                   style={{ color: '#1A1E2E' }}
                 >
                   Fotos
                 </h1>
-                <p className="mt-1 text-gray-600">
+                <p className="flex justify-center mt-1 text-gray-600">
                   Selecciona máximo 3 fotos para crear una galería:
                 </p>
-                <div className="h-auto p-2 mx-auto mt-8 border border-gray-400 rounded-lg md:p-6">
+                <div className="sm:w-[650px] w-[550px] h-[180px] sm:h-[330px] p-2 mx-auto mt-8 border border-gray-400 rounded-lg sm:p-6">
                   <div className="grid grid-cols-3 gap-1 sm:gap-4">
                     {boxes.map((box, i) => (
                       <div
                         key={box}
-                        className="relative flex items-center justify-center w-full h-24 bg-gray-300 cursor-pointer sm:h-36"
+                        className="relative flex items-center justify-center w-full h-[160px] bg-gray-300 cursor-pointer sm:h-[280px]"
                         onClick={handleBoxClick}
                       >
                         {imageFiles[i] ? (
@@ -306,10 +306,10 @@ const Publicaciones = () => {
                     ))}
                   </div>
                 </div>
-                <div className="flex justify-center py-10 my-5">
+                <div className="flex justify-center py-10 ">
                   <button
                     type="submit"
-                    className="px-4 py-2 text-white bg-blue-800 rounded-full hover:bg-blue-500"
+                    className="px-4 w-[120px] h-[55px] text-white bg-blue-800 rounded-full hover:bg-blue-500"
                   >
                     Publicar
                   </button>
