@@ -5,7 +5,7 @@ import { categories } from '../../lib/data/categories';
 import { eventsMock } from '../../lib/data/events.mock';
 /*components */
 import BtnBlue from '../../components/BtnBlue/BtnBlue';
-import EventCard from '../../components/card/EventCard';
+import EventCardSearch from '../../components/card/EventCardSearch';
 import Input from '../../components/input/Input';
 import { Layout } from '../../components/layout/Layout';
 import { EventSlider } from '../../components/sliders/EventSlider/EventSlider';
@@ -54,7 +54,7 @@ export const SearchPage: NextPageWithLayout = () => {
       </section>
       <section className="pt-11 pb-28">
         {eventsMock?.map((event) => (
-          <EventCard
+          <EventCardSearch
             key={event.id}
             id={event.id}
             title={event.title}
