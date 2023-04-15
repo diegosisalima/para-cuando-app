@@ -27,7 +27,7 @@ export const ProfilePage: NextPageWithLayout = () => {
       </section>
       <section className="flex flex-col items-center gap-8 pt-16 sm:flex-row sm:flex-wrap sm:justify-center">
         <EventCard
-          id={2}
+          id={'2'}
           title="Tienda Zara"
           short_description="Tienda por departamento de marca de ropa y
 accesorios."
