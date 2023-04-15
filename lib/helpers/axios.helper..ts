@@ -2,7 +2,7 @@ import axios from 'axios';
 import Cookie from 'js-cookie';
 import getConfig from 'next/config';
 import Router from 'next/router';
-Cookie.set('nombre', 'juan');
+
 const { publicRuntimeConfig } = getConfig();
 const BASE_URL = publicRuntimeConfig.BASE_URL;
 
