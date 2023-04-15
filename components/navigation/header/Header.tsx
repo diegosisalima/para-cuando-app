@@ -5,8 +5,10 @@ import IconLogo from '../../assets/logo/IconLogo';
 import Plus from '../../assets/svg/Plus';
 import User from '../../assets/svg/User';
 /*components */
-import { useUserMe } from '../../../lib/services/user.services';
 import ProfileOptions from '../../profileOptions/ProfileOptions';
+/*data */
+import { useUserMe } from '../../../lib/services/user.services';
+
 const LblPublication = () => {
   return (
     <Link
@@ -55,7 +57,7 @@ const Header = () => {
               <Link href="/profile" target={'_parent'}>
                 <div className="flex items-center justify-center gap-3 hover:cursor-pointer">
                   <User stroke="white" />
-                  <p>example@gmail.com</p>
+                  <p>{login?.email}</p>
                 </div>
               </Link>
               <div

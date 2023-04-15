@@ -6,7 +6,7 @@ import { useUserMe } from '../../lib/services/user.services';
 import { Heart } from '../assets/svg/Heart';
 import User from '../assets/svg/User';
 interface IEventCardProps {
-  id: number;
+  id: string;
   title: string;
   short_description: string;
   votes: number;
@@ -22,6 +22,7 @@ const EventCard: React.FC<IEventCardProps> = ({
   url,
   image,
 }) => {
+  console.log(image);
   const router = useRouter();
   const [isClicked, setIsClicked] = useState(false);
   const [votes1, setVotes1] = useState(votes);
@@ -51,7 +52,8 @@ const EventCard: React.FC<IEventCardProps> = ({
           className="rounded-tl-2xl rounded-tr-2xl left-[0%] right-[0%] top-[0%] bottom-[47.36%]"
           width={299}
           height={450}
-          src={image}
+          // src={image}
+          src={'/mock-event-image.png'}
           alt={title}
         />
       </Link>
@@ -61,14 +63,16 @@ const EventCard: React.FC<IEventCardProps> = ({
         onClick={handleClick}
       ></Heart>
       <section className="px-6 pt-6 ">
-        <strong>
-          <h1 className="app-title-3">{title}</h1>
-        </strong>
-        <div className="h-[72px]">
-          <p className="h-full py-1 overflow-hidden app-texto-1 text-app-grayDark">
-            {short_description}
-          </p>
-        </div>
+        <Link href={`/detail/${id}`} target="_parent">
+          <strong>
+            <h1 className="app-title-3">{title}</h1>
+          </strong>
+          <div className="h-[72px]">
+            <p className="h-full py-1 overflow-hidden app-texto-1 text-app-grayDark">
+              {short_description}
+            </p>
+          </div>
+        </Link>
         <section className="absolute bottom-10">
           <a
             className="text-app-blue"

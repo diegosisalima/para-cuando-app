@@ -7,7 +7,8 @@ import Menu from '../../components/assets/svg/Menu';
 /*data */
 import Image from 'next/image';
 import { categories } from '../../lib/data/categories';
-import { eventsMock } from '../../lib/data/events.mock';
+// import { eventsMock } from '../../lib/data/events.mock';
+import { usePublications } from '../../lib/services/publications.services';
 /*components */
 import User from '../../components/assets/svg/User';
 import BtnBlue from '../../components/BtnBlue/BtnBlue';
@@ -17,11 +18,12 @@ import { Layout } from '../../components/layout/Layout';
 import { EventSlider } from '../../components/sliders/EventSlider/EventSlider';
 import Tag from '../../components/tag/Tag';
 export const DetailPage: NextPageWithLayout = () => {
+  const { data: eventsMock } = usePublications();
   const [isShow, setIsShow] = useState(false);
   const router = useRouter();
   const { detail_id } = router.query;
-  const currentEvent = eventsMock.find(
-    (event) => event.id === Number(detail_id)
+  const currentEvent = eventsMock?.results.results.find(
+    (event: any) => event.id === detail_id
   );
   console.log(currentEvent);
   return (
@@ -55,7 +57,7 @@ export const DetailPage: NextPageWithLayout = () => {
           <p className="app-subtitle-1">Artista / Pop / Rock</p>
           <h1 className="app-title-1">{currentEvent?.title}</h1>
           <p className="app-texto-1 text-app-grayDark pt-6 pb-8">
-            {currentEvent?.short_description}
+            {currentEvent?.description}
           </p>
           <a
             className="text-app-blue app-subtitle-1"
@@ -67,7 +69,7 @@ export const DetailPage: NextPageWithLayout = () => {
           </a>
           <div className="flex items-center ">
             <User stroke="black" />
-            {currentEvent?.votes} votes
+            {currentEvent?.votes_count} votes
           </div>
           <div className="hidden w-full md:block">
             <BtnBlue text="Votar" />
@@ -77,8 +79,9 @@ export const DetailPage: NextPageWithLayout = () => {
           <Image
             className="left-[0%] right-[0%] top-[0%] bottom-[47.36%] mx-auto"
             fill={true}
-            src={currentEvent?.image || ''}
-            alt={currentEvent?.title || 'none'}
+            // src={currentEvent?.images[0]?.image_url || ''}
+            src={'/mock-event-image.png'}
+            alt={currentEvent?.title}
           />
         </div>
         <div className="w-full pt-[32px] md:hidden">
@@ -90,7 +93,6 @@ export const DetailPage: NextPageWithLayout = () => {
         <EventSlider
           title="Recientes"
           subtitle="Las personas últimanete están hablando de esto"
-          events={eventsMock}
         />
       </div>
     </div>

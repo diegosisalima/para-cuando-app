@@ -1,6 +1,5 @@
 import Link from 'next/link';
-import { eventsMock } from '../lib/data/events.mock';
-// import { useCategories } from '../lib/services/categories.services';
+// import { eventsMock } from '../lib/data/events.mock';
 import { NextPageWithLayout } from './page';
 /*components */
 import Logo from '../components/assets/logo/Logo';
@@ -10,13 +9,15 @@ import { Layout } from '../components/layout/Layout';
 import { EventSlider } from '../components/sliders/EventSlider/EventSlider';
 import Tag from '../components/tag/Tag';
 /*data */
+import { usePublications } from '../lib/services/publications.services';
+// import { useCategories } from '../lib/services/categories.services';
 import { categories } from '../lib/data/categories';
 const Home: NextPageWithLayout = () => {
   // const { data, error, isLoading } = useCategories();
 
   // console.log({ data, error, isLoading });
-  // const { data: publicationResponse } = usePublications();
-
+  const { data: publicationResponse } = usePublications();
+  console.log(publicationResponse);
   // const publications = publicationResponse?.results;
 
   return (
@@ -44,12 +45,12 @@ const Home: NextPageWithLayout = () => {
         <EventSlider
           title="Populares en Querétaro"
           subtitle="Lo que las personas piden más"
-          events={eventsMock}
+          // events={eventsMock}
         />
         <EventSlider
           title="Sugerencias para ti"
           subtitle="Publicaciones que podrías colaborar"
-          events={eventsMock}
+          // events={eventsMock}
         />
 
         <Interest />
@@ -57,7 +58,7 @@ const Home: NextPageWithLayout = () => {
         <EventSlider
           title="Recientes"
           subtitle="Las personas últimanete están hablando de esto"
-          events={eventsMock}
+          // events={eventsMock}
         />
       </div>
     </div>

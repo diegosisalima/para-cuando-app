@@ -2,6 +2,8 @@ import AddBox from '../../components/addBox/AddBox';
 import BtnBlue from '../../components/BtnBlue/BtnBlue';
 import { Layout } from '../../components/layout/Layout';
 import { NextPageWithLayout } from '../page';
+/*data*/
+import { useUserMe } from '../../lib/services/user.services';
 
 const AddCategory = () => {
   return (
@@ -17,6 +19,7 @@ const AddCategory = () => {
 };
 
 export const ConfigPage: NextPageWithLayout = () => {
+  const { data: login } = useUserMe();
   return (
     <div>
       <div className="app-banner -mt-4 py-9 bg-app-blue app-title-1 text-white pl-10 sm:pl-40 ">
@@ -36,11 +39,19 @@ export const ConfigPage: NextPageWithLayout = () => {
           <section className="sm:grow sm:py-9">
             <fieldset className="border border-[#7D7D7D] rounded-lg px-1 mb-6">
               <legend className="mx-3 px-3 text-[#7D7D7D]">First Name</legend>
-              <input type="text" className="border w-full h-full" />
+              <input
+                type="text"
+                placeholder={login?.first_name}
+                className="border w-full h-full"
+              />
             </fieldset>
             <fieldset className="border border-[#7D7D7D] rounded-lg px-1">
               <legend className="mx-3 px-3 text-[#7D7D7D]">Last name</legend>
-              <input type="text" className="border w-full h-full" />
+              <input
+                type="text"
+                placeholder={login?.last_name}
+                className="border w-full h-full"
+              />
             </fieldset>
           </section>
         </div>
