@@ -1,37 +1,36 @@
 import axios from 'axios';
 import useSWR from 'swr';
-import { PublicationsResponse } from '../interfaces/publications.interfaces';
+import { fetcher } from '../helpers/fetcher.helper';
 
 function usePublications() {
-  const { data, isValidating, error, mutate } =
-    useSWR<PublicationsResponse>('/publications');
+  const { data, isValidating, error, mutate } = useSWR(
+    '/publications/',
+    fetcher
+  );
 
   return {
-    data: data?.results,
+    data,
     isValidating,
     error,
     mutate,
   };
-  // const {data, error, isLoading, mutate} = useSWR(
-  // params ? '/publications?${params}' : '/publication'
-  // );
-  // return {
-  // data,
-  // error,
-  // isLoading,
-  // mutate,
-  // };
 }
-function createPublication(data: string) {
-  return axios.post(
-    'https://paracuando-academlo-api.academlo.tech/api/v1',
-    data
-  );
-}
-// function getPublications(){
-// return axios.get(
-//'https://paracuando-academlo-api.academlo.tech/api/v1/publications'
-// );
-// }
 
-export { usePublications, createPublication };
+function usePublicationsTypes() {
+  const { data, error, isLoading, mutate } = useSWR(
+    '/publications-types/',
+    fetcher
+  );
+  return {
+    data,
+    error,
+    isLoading,
+    mutate,
+  };
+}
+
+function createPublication(data: object) {
+  return axios.post('/publications/', data);
+}
+
+export { usePublications, createPublication, usePublicationsTypes };

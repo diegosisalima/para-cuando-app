@@ -21,7 +21,6 @@ const LblPublication = () => {
 const Header = () => {
   const [isShow, setIsShow] = useState(false);
   const { data: login } = useUserMe();
-  console.log(login);
 
   return (
     <div className="bg-black text-white flex items-center justify-between px-4 sm:px-12 py-4 min-h-[70px] text-sm relative">
@@ -83,10 +82,10 @@ const Header = () => {
           <>
             <LblPublication />
             <p className="font-medium text-xs leading-[14px] ml-[31px]">
-              <Link href={'/sign-in'}>Log In</Link>
+              <Link href={'/login'}>Log In</Link>
             </p>
             <p className="font-medium text-xs leading-[14px] ml-[21px]">
-              <Link href={'/sign-up'}>Sign Up</Link>
+              <Link href={'/sing-up'}>Sign Up</Link>
             </p>
           </>
         )}
