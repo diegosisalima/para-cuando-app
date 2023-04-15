@@ -9,7 +9,6 @@ import Interest from '../../components/interest/Interest';
 import { EventSlider } from '../../components/sliders/EventSlider/EventSlider';
 import Tag from '../../components/tag/Tag';
 import { categories } from '../../lib/data/categories';
-import { eventsMock } from '../../lib/data/events.mock';
 export const CategoryPage: NextPageWithLayout = () => {
   const [isShow, setIsShow] = useState(false);
   const router = useRouter();
@@ -74,12 +73,10 @@ export const CategoryPage: NextPageWithLayout = () => {
         <EventSlider
           title="Populares en Querétaro"
           subtitle="Lo que las personas piden más"
-          events={eventsMock}
         />
         <EventSlider
           title="Sugerencias para ti"
           subtitle="Publicaciones que podrías colaborar"
-          events={eventsMock}
         />
 
         <Interest />
@@ -87,7 +84,6 @@ export const CategoryPage: NextPageWithLayout = () => {
         <EventSlider
           title="Recientes"
           subtitle="Las personas últimanete están hablando de esto"
-          events={eventsMock}
         />
       </div>
     </div>
