@@ -70,7 +70,6 @@ export const SearchPage: NextPageWithLayout = () => {
         <EventSlider
           title="Recientes"
           subtitle="Las personas últimanete están hablando de esto"
-          events={eventsMock}
         />
       </div>
     </div>
